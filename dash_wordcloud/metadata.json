@@ -1,0 +1,118 @@
+{
+  "src/lib/components/WordCloud.react.js": {
+    "description": "",
+    "displayName": "WordCloud",
+    "methods": [],
+    "props": {
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'wc'",
+          "computed": false
+        }
+      },
+      "words": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "shape",
+            "value": {
+              "text": {
+                "name": "string",
+                "required": true
+              },
+              "value": {
+                "name": "number",
+                "required": true
+              }
+            }
+          }
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{\"text\": \"\", \"value\": 1}",
+          "computed": false
+        }
+      },
+      "options": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "fontStyle": {
+              "name": "string",
+              "required": false
+            },
+            "fontSizes": {
+              "name": "arrayOf",
+              "value": {
+                "name": "number"
+              },
+              "required": false
+            },
+            "colors": {
+              "name": "arrayOf",
+              "value": {
+                "name": "string"
+              },
+              "required": false
+            },
+            "enableTooltip": {
+              "name": "bool",
+              "required": false
+            },
+            "deterministic": {
+              "name": "bool",
+              "required": false
+            },
+            "fontFamily": {
+              "name": "string",
+              "required": false
+            },
+            "fontWeight": {
+              "name": "string",
+              "required": false
+            },
+            "rotations": {
+              "name": "number",
+              "required": false
+            },
+            "rotationAngles": {
+              "name": "arrayOf",
+              "value": {
+                "name": "number"
+              },
+              "required": false
+            },
+            "padding": {
+              "name": "number",
+              "required": false
+            },
+            "scale": {
+              "name": "string",
+              "required": false
+            },
+            "spiral": {
+              "name": "string",
+              "required": false
+            },
+            "transitionDuration": {
+              "name": "number",
+              "required": false
+            }
+          }
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{\ncolors: ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b'],\nenableTooltip: true,\ndeterministic: false,\nfontFamily: 'impact',\nfontSizes: [5, 60],\nfontStyle: 'normal',\nfontWeight: 'normal',\npadding: 2,\nrotations: 2,\nrotationAngles: [0, 90],\nscale: 'sqrt',\nspiral: 'archimedean',\ntransitionDuration: 1000,\n}",
+          "computed": false
+        }
+      }
+    }
+  }
+}

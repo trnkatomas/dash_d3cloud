@@ -1,0 +1,49 @@
+{
+  "name": "dash_wordcloud",
+  "version": "0.0.1",
+  "description": "Dash component based on react-wordcloud which is based on d3-cloud",
+  "scripts": {
+    "start": "webpack-serve ./webpack.serve.config.js --open",
+    "validate-init": "python _validate_init.py",
+    "prepublish": "npm run validate-init",
+    "build:js-dev": "webpack --mode development",
+    "build": "npm run build:js && npm run build:py",
+    "build:js": "webpack --mode production",
+    "build:py": "dash-generate-components ./src/lib/components dash_wordcloud",
+    "build:py-activated": "(. venv/bin/activate || venv\\scripts\\activate && npm run build:py)",
+    "build:all": "npm run build:js && npm run build:js-dev && npm run build:py",
+    "build:all-activated": "(. venv/bin/activate || venv\\scripts\\activate && npm run build:all)"
+  },
+  "author": "Tomas Trnka tomas@trnkatomas.eu",
+  "license": "MIT",
+  "dependencies": {
+    "acorn": "^6.1.1",
+    "ramda": "^0.25.0",
+    "react-wordcloud": "^1.0.8"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "copyfiles": "^2.0.0",
+    "css-loader": "^0.28.11",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-react": "^7.9.1",
+    "npm": "^6.1.0",
+    "react": "^16.8.6",
+    "react-docgen": "^2.20.1",
+    "react-dom": ">=16.8.4",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.1",
+    "webpack-serve": "^1.0.2"
+  },
+  "engines": {
+    "node": ">=8.11.0",
+    "npm": ">=6.1.0"
+  }
+}
