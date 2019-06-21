@@ -29,7 +29,7 @@ Those keys have the following types:
     def __init__(self, id=Component.UNDEFINED, words=Component.UNDEFINED, options=Component.UNDEFINED, **kwargs):
         self._prop_names = ['id', 'words', 'options']
         self._type = 'WordCloud'
-        self._namespace = 'dash_wordcloud'
+        self._namespace = 'dash_d3cloud'
         self._valid_wildcard_attributes =            []
         self.available_properties = ['id', 'words', 'options']
         self.available_wildcard_properties =            []

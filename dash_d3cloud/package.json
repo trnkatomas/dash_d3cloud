@@ -1,6 +1,6 @@
 {
-  "name": "dash_wordcloud",
-  "version": "0.0.1",
+  "name": "dash_d3cloud",
+  "version": "0.0.2",
   "description": "Dash component based on react-wordcloud which is based on d3-cloud",
   "scripts": {
     "start": "webpack-serve ./webpack.serve.config.js --open",
@@ -9,15 +9,18 @@
     "build:js-dev": "webpack --mode development",
     "build": "npm run build:js && npm run build:py",
     "build:js": "webpack --mode production",
-    "build:py": "dash-generate-components ./src/lib/components dash_wordcloud",
+    "build:py": "dash-generate-components ./src/lib/components dash_d3cloud",
     "build:py-activated": "(. venv/bin/activate || venv\\scripts\\activate && npm run build:py)",
     "build:all": "npm run build:js && npm run build:js-dev && npm run build:py",
     "build:all-activated": "(. venv/bin/activate || venv\\scripts\\activate && npm run build:all)"
   },
   "author": "Tomas Trnka tomas@trnkatomas.eu",
+  "author_email": "tomas@trnkatomas.eu",
+  "url": "https://github.com/trnkatomas/dash_d3cloud",
   "license": "MIT",
   "dependencies": {
     "acorn": "^6.1.1",
+    "js-yaml": "^3.13.1",
     "ramda": "^0.25.0",
     "react-wordcloud": "^1.0.8"
   },
@@ -36,7 +39,7 @@
     "npm": "^6.1.0",
     "react": "^16.8.6",
     "react-docgen": "^2.20.1",
-    "react-dom": ">=0.14",
+    "react-dom": ">=16.8.4",
     "style-loader": "^0.21.0",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.1",
