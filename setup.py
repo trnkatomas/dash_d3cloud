@@ -11,7 +11,6 @@ package_name = package["name"].replace(" ", "_").replace("-", "_")
 with open(os.path.join(this_directory, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
-
 setup(
     name=package_name,
     version=package["version"],
@@ -19,6 +18,7 @@ setup(
     author_email=package["author_email"],
     url=package["url"],
     packages=[package_name],
+    package_data={package_name: ['*.json'] + ['*.js']},
     include_package_data=True,
     license=package['license'],
     long_description=long_description,
