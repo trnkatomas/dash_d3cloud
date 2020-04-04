@@ -19,7 +19,7 @@
   "url": "https://github.com/trnkatomas/dash_d3cloud",
   "license": "MIT",
   "dependencies": {
-    "acorn": "^6.1.1",
+    "acorn": "^6.4.1",
     "js-yaml": "^3.13.1",
     "ramda": "^0.25.0",
     "react-wordcloud": "^1.0.8"
