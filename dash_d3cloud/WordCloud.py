@@ -8,19 +8,36 @@ class WordCloud(Component):
 
 
 Keyword arguments:
-- id (string; optional)
-- words (list; optional)
-- options (optional): . options has the following type: dict containing keys 'fontStyle', 'fontSizes', 'colors', 'enableTooltip', 'deterministic', 'fontFamily', 'fontWeight', 'rotations', 'rotationAngles', 'padding', 'scale', 'spiral', 'transitionDuration'.
+- id (string; default 'wc')
+- words (dict; default {"text": "", "value": 1}): words has the following type: list of dicts containing keys 'text', 'value'.
+Those keys have the following types:
+  - text (string; required)
+  - value (number; required)
+- options (dict; default {
+colors: ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b'],
+enableTooltip: true,
+deterministic: false,
+fontFamily: 'impact',
+fontSizes: [5, 60],
+fontStyle: 'normal',
+fontWeight: 'normal',
+padding: 2,
+rotations: 2,
+rotationAngles: [0, 90],
+scale: 'sqrt',
+spiral: 'archimedean',
+transitionDuration: 1000,
+}): options has the following type: dict containing keys 'fontStyle', 'fontSizes', 'colors', 'enableTooltip', 'deterministic', 'fontFamily', 'fontWeight', 'rotations', 'rotationAngles', 'padding', 'scale', 'spiral', 'transitionDuration'.
 Those keys have the following types:
   - fontStyle (string; optional)
-  - fontSizes (list; optional)
-  - colors (list; optional)
+  - fontSizes (list of numbers; optional)
+  - colors (list of strings; optional)
   - enableTooltip (boolean; optional)
   - deterministic (boolean; optional)
   - fontFamily (string; optional)
   - fontWeight (string; optional)
   - rotations (number; optional)
-  - rotationAngles (list; optional)
+  - rotationAngles (list of numbers; optional)
   - padding (number; optional)
   - scale (string; optional)
   - spiral (string; optional)
