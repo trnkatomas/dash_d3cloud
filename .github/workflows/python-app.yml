@@ -26,7 +26,7 @@ jobs:
         pip install flake8 pytest
         if [ -f tests/requirements.txt ]; then
          pip install -r tests/requirements.txt; 
-        else;
+        else
           if [ -f requirements.txt ]; then
             pip install -r requirements.txt;
           fi
