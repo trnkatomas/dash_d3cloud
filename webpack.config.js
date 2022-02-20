@@ -33,7 +33,7 @@ module.exports = (env, argv) => {
     const entry = overrides.entry || {main: './src/lib/index.js'};
 
     const devtool = overrides.devtool || (
-        mode === 'development' ? "eval-source-map" : 'none'
+        mode === 'development' ? "source-map" : 'none'
     );
 
     const externals = ('externals' in overrides) ? overrides.externals : ({
@@ -74,6 +74,6 @@ module.exports = (env, argv) => {
                 },
             ],
         },
-        devtool
+        devtool: "source-map"
     }
 };
