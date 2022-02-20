@@ -6,7 +6,7 @@ chromedriver-binary
 dash>=2.0.0
 ipdb
 percy
-selenium>=3.8.0
+selenium>=4.0.0
 flake8
 pylint
-pytest-dash>=2.1.1
+dash[testing]
