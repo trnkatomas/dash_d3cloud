@@ -1,33 +1,27 @@
-from pytest_dash.wait_for import (
-    wait_for_text_to_equal,
-    wait_for_element_by_css_selector
-)
+from selenium.webdriver.chrome.options import Options
+from dash.testing.application_runners import import_app
 
-from pytest_dash.application_runners import import_app
+from selenium import webdriver
 
+def pytest_setup_options():
+    options = Options()
+    options.add_argument('--disable-gpu')
+    return options
 
 # Basic test for the component rendering.
-def test_render_component(dash_threaded):
-    # Start a dash app contained in `usage.py`
-    # dash_threaded is a fixture by pytest-dash
-    # It will load a py file containing a Dash instance named `app`
-    # and start it in a thread.
-    driver = dash_threaded.driver
+def test_render_component(dash_duo):
     app = import_app('usage')
-    dash_threaded(app)
+    dash_duo.start_server(app)
 
-    # Get the generated component input with selenium
-    # The html input will be a children of the #input dash component
-    my_component = wait_for_element_by_css_selector(driver, '#input > input')
+    # select the main wordcloud component
+    my_component = dash_duo.wait_for_element_by_css_selector('#wordcloud')
 
-    assert 'my-value' == my_component.get_attribute('value')
+    # select one of the options for controlling the input, the last one from the list
+    # so we know it will be disabled in the begging
+    input_selection = dash_duo.wait_for_element_by_css_selector('#choice > label:last-child')
 
-    # Clear the input
-    my_component.clear()
+    # we click it
+    input_selection.click()
 
-    # Send keys to the custom input.
-    my_component.send_keys('Hello dash')
-
-    # Wait for the text to equal, if after the timeout (default 10 seconds)
-    # the text is not equal it will fail the test.
-    wait_for_text_to_equal(driver, '#output', 'You have entered Hello dash')
+    # than let's wait again for the svg to render again
+    dash_duo.wait_for_element_by_css_selector('#wordcloud > svg > g > text')
