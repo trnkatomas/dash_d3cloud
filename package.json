@@ -1,6 +1,6 @@
 {
   "name": "dash_d3cloud",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Dash component based on react-wordcloud which is based on d3-cloud",
   "scripts": {
     "start": "webpack-serve ./webpack.serve.config.js --open",

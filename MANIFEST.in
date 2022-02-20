@@ -1,5 +1,7 @@
-include dash_3dcloud/dash_wordcloud.min.js
-include dash_3dcloud/dash_wordcloud.dev.js
-include dash_3dcloud/metadata.json
-include dash_3dcloud/package.json
+include dash_d3cloud/dash_d3cloud.min.js
+include dash_d3cloud/dash_d3cloud.min.js.map
+include dash_d3cloud/dash_d3cloud.dev.js
+include dash_d3cloud/dash_d3cloud.dev.js.map
+include dash_d3cloud/metadata.json
+include dash_d3cloud/package.json
 include README.md
